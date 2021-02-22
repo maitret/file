@@ -3,8 +3,11 @@
     "rules": "storage.rules"
   },
   "hosting": {
-    "site": "themes-assets",
-    "public": "./"
+    "public": "/",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
   }
 }
-
