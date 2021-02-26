@@ -1,90 +1,105 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<!doctype html>
+<html lang="es">
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-      "**/.*",
-      "firebase.json",
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.2.9/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MyHostMX - Desarrollo/Programaci&oacute;n Web - Luis S. Lopez Maitret</title>
+    <meta name="og:site_name" content="MyHostMX">
+    <meta name="og:title" content="MyHostMX">
+    <meta name="og:url" content="https://www.myhostmx.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="logo.png">
+    <link href="logo.png" rel="shortcut icon">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <link href="https://www.myhostmx.com/assets/css/estilos.css?cache=no_carnal" rel="stylesheet">
+
+    <!-- Hotjar Tracking Code for www.myhostmx.com -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1221660,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-  </body>
+    <script src="https://adrianotiger.github.io/web-esheep/dist/esheep.min.js"></script>
+</head>
+<body>
+<script>
+    var petName = "green_sheep";
+    petName = petName.toLowerCase();
+    var testPetLink = "https://raw.githubusercontent.com/Adrianotiger/desktopPet/master/Pets/" + petName + "/animations.xml";
+    //console.log("Pet xml: " + testPetLink);
+    var testPet = new eSheep({allowPets:"all", allowPopup:"no"}); testPet.Start(testPetLink);
+    var testPet2 = new eSheep({allowPets:"all", allowPopup:"no"}); testPet2.Start(testPetLink);
+    var testPet3 = new eSheep({allowPets:"all", allowPopup:"no"}); testPet3.Start(testPetLink);
+    var testPet4 = new eSheep({allowPets:"all", allowPopup:"no"}); testPet4.Start(testPetLink);
+    //var testPet5 = new eSheep({allowPets:"all", allowPopup:"no"}); testPet5.Start(testPetLink);
+    //var testPet6 = new eSheep({allowPets:"all", allowPopup:"no"}); testPet6.Start(testPetLink);
+</script>
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v3.2'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-customerchat" attribution=setup_tool page_id="323050744415985" theme_color="#fa3c4c"
+     logged_in_greeting="¿Necesitas ayuda con tu Página Web?" logged_out_greeting="¿Necesitas ayuda con tu Página Web?"></div>
+
+<div class="container">
+
+    <div class="text-center main_content">
+        <img src="grano_cafe_thumnail.png" class="img-fluid">
+        <h1 class="logo_text_1">MyHostMX</h1> <h2 class="logo_text_2">Desarrollo Web</h2>
+        <br>
+        <p><a href="https://m.me/myhostmx" class="btn btn-primary">&iquest;Necesitas ayuda con tu P&aacute;gina Web?</a></p>
+        <br>
+        <div><a href="https://m.me/myhostmx?https://store.myhostmx.com/es/" class="text-info"><b>
+            &iquest;Deseas comprar un dominio u hospedaje para tu p&aacute;gina web a un precio accesible y con excelente soporte en l&iacute;nea? Vamos!
+        </b></a>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div>
+            <a href="https://www.linkedin.com/in/maitret/" class="btn btn-primary btn-sm" title="Perfil de LinkedIn para mas info de quien soy :)"><i class="fas fa-hand-spock"></i> LinkedIn</a>
+            <a href="https://www.facebook.com/maitret.ito" class="btn btn-primary btn-sm" title="Perfil de Facebook para mas info de quien soy :)"><i class="fas fa-hand-spock"></i> Facebook</a>
+            <a href="mailto:maitret@myhostmx.com" class="btn btn-primary btn-sm" title="Email de Contacto :)"><i class="fas fa-hand-spock"></i> Email</a>
+        </div>
+        <br>
+        <div>
+            <a href="https://www.sanrafaelveracruz.com.mx/" class="text-muted" title="Programando con Amor desde San Rafael, Veracruz, MX ;)">
+                <i class="fa fa-code" aria-hidden="true"></i> con <i class="fa fa-heartbeat" aria-hidden="true"></i> desde San Rafael, Veracruz, M&eacute;xico</a>
+        </div>
+
+        <br>
+        I <i class="fa fa-heart" aria-hidden="true"></i> Tacos
+    </div>
+</div>
+
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/js/mdb.min.js"></script>
+
+</body>
 </html>
