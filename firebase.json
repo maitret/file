@@ -10,7 +10,7 @@
     ],
 "headers": [ {
     // Applies a CORS header for all font files
-    "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css|js|map|css|jpg|jpeg|gif|png)",
+    "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css|js|map|css|jpg|jpeg|gif|png)",
     "headers": [ {
       "key": "Access-Control-Allow-Origin",
       "value": "*"
