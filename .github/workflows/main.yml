@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: jakejarvis/backblaze-b2-action@v0.1.0
+    - uses: jakejarvis/backblaze-b2-action@master
 
       env:
         SOURCE_DIR: './*'
