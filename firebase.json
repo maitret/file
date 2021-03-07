@@ -10,7 +10,7 @@
     ],
 "headers": [ {
     // Applies a CORS header for all font files
-    "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+    "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css|js|map|css|jpg|jpeg|gif|png)",
     "headers": [ {
       "key": "Access-Control-Allow-Origin",
       "value": "*"
@@ -20,14 +20,7 @@
     "source": "**/*.@(jpg|jpeg|gif|png)",
     "headers": [ {
       "key": "Cache-Control",
-      "value": "max-age=7200"
-    } ]
-  }, {
-    // A regular expression-based rewrite equivalent to the above behavior
-    "regex": ".+/\w+\.(jpg|jpeg|gif|png)$",
-    "headers": [ {
-      "key": "Cache-Control",
-      "value": "max-age=7200"
+      "value": "max-age=3600"
     } ]
   }, {
     // Sets the cache header for 404 pages to cache for 5 minutes
