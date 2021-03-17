@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="myhoskkt" persistUploadOnCheckin="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="server.maitret.dev" persistUploadOnCheckin="false" filePermissions="420" folderPermissions="493" autoUploadExternalChanges="true">
     <serverData>
       <paths name="myhoskkt">
         <serverdata>
           <mappings>
             <mapping deploy="/propias/cdn" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="server.maitret.dev">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
