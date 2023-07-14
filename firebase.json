@@ -3,7 +3,7 @@
     "rules": "storage.rules"
   },
   "hosting": {
-    "site": "themes-assets",
+    "site": "file-themes-assets",
     "public": "/",
     "ignore": [
       "**/node_modules/**"
