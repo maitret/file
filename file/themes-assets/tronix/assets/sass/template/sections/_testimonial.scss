@@ -1,0 +1,193 @@
+/* Testimonial Card ---------------------------------- */
+.testi-card {
+    position: relative;
+    background-color: $smoke-color;
+    border-radius: 10px;
+    overflow: hidden;
+    .box-text {
+        font-size: 18px;
+        line-height: 28px;
+        margin: 0;
+        padding: 43px 40px;
+        background-color: $white-color;
+        border-radius: 10px 10px 0 0;
+        u {
+            color: $title-color;
+            font-weight: 500;
+        }
+        @include xs {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+    .box-profile {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 35px 40px;
+    }
+    .box-img {
+        width: 67px;
+        min-width: 67px;
+        border-radius: 99px;
+        img {
+            border-radius: inherit;
+        }
+    }
+    .box-title {
+        margin-top: 0;
+        margin-bottom: 4px;
+    }
+    .box-desig {
+        color: $theme-color;
+    }
+}
+@include xs {
+    .testi-card {
+        .box-text {
+            padding: 30px;
+        }
+        .box-profile {
+            padding: 30px 10px 30px 30px;
+        }
+        .box-title {
+            font-size: 22px;
+        }
+    }
+}
+
+/* Testimonial Box ---------------------------------- */
+.testi-box {
+    &-slide {
+        max-width: 690px;
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .box-img {
+        margin-bottom: 35px;
+        > img {
+            border-radius: 99px;
+        }
+    }
+    .box-heading {
+        font-size: 36px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        @include sm {
+            font-size: 28px;
+        }
+    }
+    .box-title {
+        font-size: 22px;
+        margin-bottom: 4px;
+    }
+    .box-desig {
+        display: block;
+        margin-bottom: -0.35em;
+        a {
+            color: $theme-color;
+        }
+    }
+    .box-text {
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: -0.45em;
+        margin-bottom: 48px;
+        @include sm {
+            margin-bottom: 36px;
+        }
+    }
+}
+
+
+/* Testimonial Grid ---------------------------------- */
+.testi-img1 {
+    margin-right: 60px;
+    @include lg {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    img {
+        width: 100%;
+        border-radius: 15px;
+        @include sm {
+            border-radius: 10px;
+        }
+    }
+}
+.testi-grid {
+    &-area {
+        position: relative;
+        .icon-box {
+            position: absolute;
+            bottom: 25px;
+            left: 335px;
+            width: 55px;
+            @include xs {
+                display: none;
+            }
+            .slider-arrow {
+                --icon-size: 55px;
+                background-color: $white-color;
+                box-shadow: 0px 3px 15px #EEEFF1;
+                color: $theme-color;
+                &:first-child {
+                    margin-bottom: 10px;
+                }
+                &:hover {
+                    background-color: $theme-color;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+    .box-text {
+        font-size: 18px;
+        line-height: 28px;
+        margin: -0.35em 0 30px 0;
+        @include sm {
+            font-size: 16px;
+        }
+    }
+    .box-title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 4px;
+        margin-top: 0;
+    }
+    .box-desig {
+        font-size: 14px;
+        color: $theme-color;
+    }
+    .box-img {
+        width: 60px;
+        border-radius: 99px;
+        overflow: hidden;
+    }
+    .box-profile {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0px 3px 15px #EEEFF1;
+        border-radius: 15px;
+        background-color: $white-color;
+        padding: 30px;
+        width: 100%;
+        max-width: 280px;
+        position: relative;
+        @include sm {
+            border-radius: 10px;
+        }
+        &:after {
+            content: '';
+            height: 20px;
+            width: 5px;
+            border-radius: 9px;
+            background-color: $theme-color;
+            position: absolute;
+            top: calc(50% - 10px);
+            left: 0;
+        }
+    }
+}

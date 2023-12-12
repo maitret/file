@@ -1,0 +1,382 @@
+.widget {
+    padding: var(--widget-padding-y, 40px) var(--widget-padding-x, 40px);
+    margin-bottom: 40px;
+    position: relative;
+    border-radius: 15px;
+    border: 1px solid #EAEBEE;
+
+    &[data-overlay]:before {
+        z-index: -1;
+    }
+    select,
+    input,
+    .form-select,
+    .form-control,
+    textarea {
+        background-color: $white-color;
+        border-radius: 20px;
+    }
+    textarea {
+        min-height: 120px;
+    }
+    .form-group {
+        > i {
+            background-color: $white-color;
+        }
+    }
+    &.bg-smoke {
+        border: none;
+    }
+}
+
+.widget_title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: $title-font;
+    line-height: 1em;
+    margin: -0.12em 0 27px 0;
+}
+.widget-form {
+    --bs-gutter-x: 20px;
+}
+
+.widget {
+    .search-form {
+        position: relative;
+        display: flex;
+        input {
+            flex: 1;
+            border-radius: 10px;
+            padding-right: 25px;
+            border: 1px solid #EAEBEE;
+            box-shadow: 0px 7px 24px rgba(0, 0, 0, 0.09);
+            &:focus {
+                border-color: $theme-color;
+            }
+        }
+        button {
+            border: none;
+            font-size: 16px;
+            font-size: 500;
+            background-color: $theme-color;
+            color: $white-color;
+            display: inline-block;
+            padding: 0;
+            width: 55px;
+            height: 100%;
+            text-align: center;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            &:hover {
+                background-color: $title-color;
+            }
+        }
+    }
+}
+.widget-availability {
+    .info {
+        background-color: $white-color;
+        border-radius: 15px;
+        padding: 14px 20px;
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        i {
+            margin-right: 4px;
+        }
+        &.closed {
+            color: $theme-color;
+        }
+    }
+}
+
+.wp-block-tag-cloud,
+.tagcloud {
+    a {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: capitalize;
+        line-height: 1;
+        padding: 10px 20px 12px 20px;
+        margin-right: 6px;
+        margin-bottom: 10px;
+        color: $body-color;
+        background-color: $white-color;
+        border-radius: 99px;
+        border: 1px solid $border-color;
+
+        &:hover {
+            background-color: $theme-color;
+            color: $white-color !important;
+            border-color: $theme-color;
+        }
+    }
+}
+.wp-block-tag-cloud,
+.tagcloud {
+    margin-right: -10px;
+    margin-bottom: -10px;
+}
+
+.sidebar-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 320px;
+    .gallery-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: $white-color;
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(-50%, 20px);
+        &:hover {
+            color: $theme-color;
+        }
+    }
+    .gallery-thumb {
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+        &:before {
+            content: '';
+            height: calc(100% - 14px);
+            width: calc(100% - 14px);
+            background-color: $title-color;
+            opacity: 0.6;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            border: 1px solid $white-color;
+            transform: scaleX(0);
+            border-radius: inherit;
+            transition: 0.4s ease-in-out;
+        }
+        img {
+            width: 100%;
+        }
+        &:hover {
+            &:before {
+                transform: scaleX(1);
+            }
+            .gallery-btn {
+                visibility: visible;
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    .wp-block-image {
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px;
+        width: 100% !important;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.recent-post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .media-img {
+        margin-right: 15px;
+        width: 80px;
+        overflow: hidden;
+        border-radius: 15px;
+        position: relative;
+        img {
+            width: 100%;
+            transition: 0.4s ease-in-out;
+        }
+        &:after {
+            content: '\f0c1';
+            font-family: $icon-font;
+            position: absolute;
+            inset: 0;
+            text-align: center;
+            line-height: 85px;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: $theme-color;
+            border-radius: inherit;
+            pointer-events: none;
+            transform: scale(0);
+            transition: 0.4s ease-in-out;
+        }
+    }
+
+    .post-title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0 0 8px 0;
+        font-family: $title-font;
+    }
+
+    .recent-post-meta {
+        a {
+            text-transform: capitalize;
+            font-size: 14px;
+            color: $body-color;
+            i {
+                margin-right: 6px;
+                color: $theme-color;
+            }
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+    &:hover {
+        .media-img {
+            img {
+                transform: scale(1.1);
+            }
+            &:after {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+.sidebar-area {
+    position: relative;
+    margin-bottom: -10px;
+    select,
+    input {
+        background-color: $white-color;
+    }
+    .widget_nav_menu,
+    .widget_meta,
+    .widget_pages,
+    .widget_archive,
+    .widget_categories,
+    .wp-block-categories {
+        > ul,
+        .menu {
+            margin: -22px 0 -22px 0;
+        }
+    }
+    .wp-block-categories {
+        margin: -22px 0 -22px 0;
+    }
+    .sidebar-gallery {
+        margin-bottom: 0 !important;
+    }
+
+    .widget .wp-block-search {
+        margin-bottom: 0;
+    }
+}
+
+// Widget Info ---------------------
+.project-sidebar {
+    position: sticky;
+    top: 120px;
+    right: 0;
+}
+.project_info {
+    background-color: $theme-color;
+    border: none;
+    .widget_title {
+        color: $white-color;
+        margin-bottom: 15px;
+    }
+    .box-text {
+        color: $white-color;
+        margin-bottom: 35px;
+    }
+    .box-link {
+        font-size: 18px;
+        font-weight: 500;
+        color: $white-color;
+        display: flex;
+        gap: 15px;
+        margin-top: 26px;
+        margin-bottom: -0.3em;
+        i {
+            width: 18px;
+            position: relative;
+            top: 3px;
+        }
+        a {
+            color: inherit;
+            &:hover {
+                color: $title-color;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .sidebar-shop {
+        .widget {
+            padding: 30px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar-shop {
+        .widget {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+@include lg {
+    .widget {
+        --widget-padding-y: 30px;
+        --widget-padding-x: 30px;
+    }
+    .project_info {
+        --widget-padding-x: 20px;
+    }
+    .widget_title {
+        font-size: 22px;
+        margin: -0.12em 0 28px 0;
+    }
+}
+
+@include md {
+    .sidebar-area {
+        padding-top: 30px;
+    }
+    .widget {
+        --widget-padding-y: 40px;
+        --widget-padding-x: 40px;
+    }
+}
+
+@include sm {
+    .widget {
+        padding: 20px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 330px) {
+    .recent-post {
+        .post-title {
+            font-size: 14px;
+            line-height: 24px;
+        }
+        .recent-post-meta a {
+            font-size: 12px;
+        }
+    }
+}

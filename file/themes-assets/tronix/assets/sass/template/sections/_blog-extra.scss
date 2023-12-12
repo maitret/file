@@ -1,0 +1,156 @@
+/* Blog Card ---------------------------------- */
+.blog-card {
+    background-color: $white-color;
+    box-shadow: 0px 9px 60px rgba(8, 20, 44, 0.07);
+    border-radius: 15px;
+    padding: 30px;
+    .blog-img {
+        border-radius: 15px;
+        margin-bottom: 27px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            transition: 0.4s ease-in-out;
+        }
+    }
+    .box-title {
+        margin-bottom: 17px;
+        a {
+            background-image: linear-gradient(to left, $theme-color, $theme-color);
+            background-repeat: no-repeat;
+            background-position: bottom left;
+            background-size: 0 2px;
+            transition: 0.5s ease-in-out;
+            &:hover {
+                background-size: 100% 2px;
+            }
+        }
+    }
+    .box-text {
+        margin-bottom: 22px;
+    }
+    .blog-meta {
+        margin: -0.4em 0 20px 0;
+    }
+    .link-btn {
+        display: block;
+        max-width: max-content;
+        margin-bottom: -0.1em;
+    }
+    &:hover {
+        .blog-img {
+            img {
+                transform: scale(1.08);
+            }
+        }
+    }
+}
+@include md {
+    .blog-card .box-title {
+        font-size: 22px;
+    }
+}
+@include sm {
+    .blog-card {
+        .box-title {
+            font-size: 24px;
+        }
+    }
+}
+@include xs {
+    .blog-card {
+        border-radius: 10px;
+        .blog-img {
+            border-radius: 10px;
+        }
+    }
+}
+@media (max-width: 360px) {
+    .blog-card .box-title {
+        font-size: 21px;
+    }
+}
+
+/* Blog Box ---------------------------------- */
+.blog-box {
+    border-radius: 20px;
+    background-color: $white-color;
+    border: 1px solid #E3E8F4;
+    .blog-img {
+        border-radius: 20px;
+        margin: -1px;
+        overflow: hidden;
+        img {
+            border-radius: inherit;
+            width: 100%;
+            transition: 0.4s ease-in-out;
+        }
+    }
+    .blog-content {
+        padding: 40px;
+    }
+    .box-title {
+        font-size: 30px;
+        margin-bottom: 16px;
+        a {
+            background-image: linear-gradient(to left, $theme-color, $theme-color);
+            background-repeat: no-repeat;
+            background-position: bottom left;
+            background-size: 0 2px;
+            transition: 0.5s ease-in-out;
+            &:hover {
+                background-size: 100% 2px;
+            }
+        }
+    }
+    .blog-meta {
+        margin: -0.3em 0 22px 0;
+        span, 
+        a {
+            > i {
+                color: $theme-color;
+            }
+        }
+    }
+    .ot-btn {
+        margin-top: 35px;
+        background-color: $smoke-color2;
+        color: $theme-color;
+        &::before {
+            background-color: $theme-color;
+        }
+        &:hover {
+            color: $white-color;
+        }
+    }
+    &:hover {
+        .blog-img {
+            img {
+                transform: scale(1.08);
+            }
+        }
+    }
+}
+
+@include xs {
+    .blog-box {
+        border-radius: 10px;
+        .blog-img {
+            border-radius: 10px;
+        }
+        .blog-content {
+            padding: 30px;
+        }
+        .box-title {
+            font-size: 24px;
+        }
+    }
+}
+
+@include vxs {
+    .blog-box {
+        .blog-content {
+            padding: 30px 20px 20px 20px;
+        }
+    }
+}

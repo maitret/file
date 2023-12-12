@@ -1,0 +1,419 @@
+.footer-wrapper {
+    --ot-border-color: #152B54;
+    --body-color: #8A99B4;
+    position: relative;
+    z-index: 2;
+    background-color: $title-color;
+    overflow: hidden;
+    .ot-social {
+        a {
+            background-color: #15284C;
+            color: $white-color;
+            border-radius: 99pc;
+            &:hover {
+                background-color: $theme-color;
+            }
+        }
+    }
+    .social-links a {
+        margin: 0 30px 0 0;
+    }
+}
+.widget-area {
+    padding-top: $space;
+    padding-bottom: 40px;
+}
+.footer-bottom {
+    border-top: 1px solid $border-color;
+}
+.footer-contact {
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        .divider {
+            flex: 0 0 1px;
+            background-color: $border-color;
+        }
+    }
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    .icon-btn {
+        --btn-size: 85px;
+        font-size: 36px;
+        color: $white-color;
+        background-color: #152B54;
+    }
+    .box-title {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $white-color;
+    }
+    .box-text {
+        max-width: 175px;
+    }
+    .fa-phone-volume {
+        transform: rotate(-45deg);
+    }
+}
+@include md {
+    .footer-contact {
+        &-wrap {
+            flex-wrap: wrap;
+            padding: 40px 0;
+            .divider {
+                display: none;
+            }
+        }
+        flex: 50%;
+        padding: 20px 0;
+    }
+}
+@include sm {
+    .footer-contact {
+        flex: 100%;
+    }
+}
+
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.footer-links {
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        font-family: $body-font;
+        display: inline-block;
+        padding-right: 15px;
+        margin-right: 10px;
+        position: relative;
+        &:after {
+            content: "";
+            height: 20px;
+            width: 1px;
+            background-color: $body-color;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin: -10px 0;
+        }
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            &:after {
+                display: none;
+            }
+        }
+    }
+    a {
+        font-family: inherit;
+        color: $body-color;
+        &:hover {
+            color: $theme-color;
+        }
+    }
+}
+.copyright-wrap {
+    padding: 26px 0;
+    background-color: #0B2048;
+    .copyright-text {
+        color: $white-color;
+        a {
+            color: $white-color;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+}
+
+.copyright-text {
+    margin: 0;
+    a {
+        color: $theme-color;
+        &:hover {
+            color: $white-color;
+        }
+    }
+}
+
+.ot-widget-contact {
+    max-width: 265px;
+}
+.footer-newsletter {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    padding-left: 60px;
+    .newsletter-title {
+        max-width: 425px;
+        margin-bottom: 0;
+    }
+}
+.schedule-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dashed rgba($color: #fff, $alpha: 0.2);
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    &:last-of-type {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+.ot-widget-schedule {
+    width: 280px;
+    max-width: 100%;
+    .title {
+        color: $white-color;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+}
+
+.newsletter-widget {
+    max-width: 290px;
+    .newsletter-form {
+        flex-direction: column;
+        gap: 15px;
+        .ot-btn {
+            width: 100%;
+        }
+    }
+    .form-group {
+        margin-bottom: 0;
+    }
+    .icon-btn {
+        border: none;
+        background-color: $theme-color;
+        color: $white-color;
+        border-radius: 0;
+        min-width: 56px;
+        padding: 0;
+        &:hover {
+            background-color: $title-color;
+        }
+    }
+    .footer-text {
+        margin-bottom: 25px;
+    }
+}
+.newsletter-form {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    gap: 10px;
+    @include lg {
+        max-width: 460px;
+    }
+    .form-group {
+        margin-bottom: 0;
+        width: 100%;
+        > i {
+            color: $theme-color;
+        }
+    }
+    input {
+        background-color: $white-color;
+        border: 1px solid $white-color;
+        width: 100%;
+        &:focus {
+            background-color: $white-color;
+            color: $body-color;
+        }
+        
+    }
+    .ot-btn {
+        min-width: 150px;
+    }
+    .newsletter-btn {
+        display: inline-block;
+        border: none;
+        background-color: $theme-color;
+        color: $title-color;
+        @include equal-size-lineHeight(55px);
+        min-width: 55px;
+    }
+}
+.newsletter-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $theme-color;
+    padding: 50px;
+    border-radius: 25px;
+    .newsletter-title {
+        margin-top: -0.24em;
+        margin-bottom: -0.24em;
+        max-width: 390px;
+        color: $white-color;
+        font-weight: 600;
+    }
+    .newsletter-text {
+        margin-bottom: -0.5em;
+        max-width: 400px;
+    }
+    .form-control {
+        border-radius: 10px;
+    }
+    .ot-btn {
+        border-radius: 10px;
+    }
+    @include md {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px 0;
+        .newsletter-form {
+            max-width: 100%;
+        }
+    }
+}
+
+@include md {
+    .newsletter-wrap {
+        padding: 40px;
+        .newsletter-title {
+            font-size: 30px;
+        }
+        .newsletter-text {
+            font-size: 16px;
+        }
+    }
+    .footer-wrapper {
+        .newsletter-form {
+            max-width: 400px;
+        }
+    }
+}
+
+@include sm {
+    .newsletter-wrap {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        .newsletter-title {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .footer-wrapper .newsletter-form {
+        max-width: 550px;
+        gap: 15px;
+        justify-content: center;
+    }
+}
+
+@include xs {
+    .newsletter-wrap {
+        padding: 40px 20px;
+        .newsletter-title {
+            font-size: 24px;
+        }
+        .newsletter-form {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    .footer-wrapper {
+        .newsletter-form {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+}
+
+
+@include md {
+    .footer-wrapper {
+        .widget-area {
+            padding-top: $space-mobile;
+            padding-bottom: 30px;
+        }
+    }
+    .copyright-text {
+        text-align: center;
+    }
+}
+
+/* footer 2 ---------------------------------- */
+.footer-layout2 {
+    background-color: $title-color;
+    .border-top {
+        border-top: 1px solid $border-color !important;
+    }
+    @include md {
+        .widget-wrapper {
+            padding: 80px 0 45px 0;
+        }
+    }
+    .widget-border {
+        width: 1px !important;
+        background-color: $border-color;
+        @include md {
+            display: none;
+        }
+    }
+    .widget {
+        margin-bottom: 0;
+        padding: 100px 0;
+        @include lg {
+            padding: 80px 0;
+        }
+        @include md {
+            padding: 0;
+            margin-bottom: 45px;
+        }
+    }
+    .social-card,
+    .contact-form1 {
+        background: #061430;
+        border: 1px solid #152B54;
+        box-shadow: 0px 8px 60px rgba(5, 15, 36, 0.76);
+    }
+}
+.info-box {
+	display: flex;
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &_icon {
+        @include equal-size(30px);
+        min-width: 30px;
+        line-height: 32px;
+        font-size: 14px;
+        background-color: rgba($color: #0E59F2, $alpha: 0.1);
+        color: $theme-color;
+        border-radius: 6px;
+        text-align: center;
+        margin-right: 10px;
+    }
+	&_text {
+		display: block;
+		color: $body-color;
+		margin-top: -0.45em;
+		margin-bottom: -0.45em;
+        align-self: center;
+	}
+	&_link {
+        display: inline-block;
+		color: $body-color;
+		&:hover {
+			color: $theme-color;
+		}
+	}
+}

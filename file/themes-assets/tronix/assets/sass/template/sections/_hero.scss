@@ -1,0 +1,335 @@
+/* Hero Global ---------------------------------- */
+.ot-hero-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.ot-hero-bg {
+    position: absolute;
+    inset: 0;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+/* Hero 1 ---------------------------------- */
+.hero-title {
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 1.167;
+    margin-bottom: 31px;
+    margin-top: -0.22em;
+    .title1,
+    .title2 {
+        display: block;
+        max-width: fit-content;
+        position: relative;
+        span {
+            font-weight: 300;
+            color: $theme-color;
+        }
+    }
+}
+.hero-text {
+    margin-bottom: 42px;
+}
+
+.hero-1 {
+    background-color: $white-color;
+    .hero-circle {
+        position: absolute;
+        width: 1203px;
+        height: 1202px;
+        left: -228px;
+        top: -500px;
+        background: radial-gradient(50% 50% at 50% 50%, #0E59F2 0%, rgba(14, 89, 242, 0) 100%);
+        filter: blur(750px);
+    }
+    .hero-shape1 {
+        position: absolute;
+        width: 1003px;
+        height: 1002px;
+        right: 10%;
+        top: -450px;
+        background: linear-gradient(269.49deg, #2764FF 20.04%, rgba(117, 72, 247, 0.27) 90.71%);
+        mix-blend-mode: color-burn;
+        filter: blur(175px);
+        opacity: 0.4;
+        @include ml {
+            opacity: 0.1;
+        }
+        @include xl {
+            display: none;
+        }
+    }
+
+    .hero-img {
+        position: absolute;
+        top: 320px;
+        right: 13%;
+        z-index: 2;
+        @include ml {
+            right: 3%;
+        }
+        img {
+            border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+            will-change: border-radius, transform, opacity;
+            animation: heroMorph 5s linear infinite;
+        }
+        &:before,
+        &:after {
+            position: absolute;
+            content: "";
+            top: -80px;
+            width: 580px;
+            height: 580px;
+            border: 2px solid $white-color;
+            border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+            will-change: border-radius, transform, opacity;
+            animation: heroMorph 5s linear infinite;
+            display: block;
+            z-index: -1;
+            @include ml {
+                top: -50px;
+            }
+        }
+        &:before {
+            left: -38px;
+        }
+        &:after {
+            right: -80px;
+            border-color: $theme-color;
+            @include ml {
+                right: -20px;
+            }
+        }
+    }
+}
+
+@keyframes heroMorph {
+    0%, 100%{
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        transform: translate3d(0,0,0) rotateZ(0.01deg);
+    }
+    34% {
+        border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+        transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+    }
+    50% {
+        transform: translate3d(0,0,0) rotateZ(0.01deg);
+    }
+    67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+        transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+    }
+}
+
+.watch-btn {
+    .text {
+        font-weight: 500;
+        color: $title-color;
+        margin-left: 20px;
+    }
+    &:hover {
+        .text {
+            color: $theme-color;
+        }
+    }
+}
+.hero-style1 {
+    position: relative;
+    z-index: 6;
+    padding: 355px 0 195px 0;
+    .sub-title {
+        margin-bottom: 33px;
+    }
+    .title-img {
+        position: absolute;
+        bottom: 72%;
+        right: 5%;
+    }
+    .hero-text {
+        max-width: 570px;
+    }
+}
+
+@include lg {
+    .hero-title {
+        font-size: 56px;
+    }
+    .hero-style1 {
+        padding: 250px 0 170px 0;
+        max-width: 380px;
+    }
+    .hero-1 {
+        .hero-img {
+            top: 260px;
+            max-width: 520px;
+        }
+    }
+}
+
+@include md {
+    .hero-1 {
+        .hero-img {
+            position: relative;
+            top: 0;
+            left: 0;
+            max-width: 560px;
+            text-align: center;
+            margin: 50px auto 0 auto;
+        }
+        .hero-circle {
+            max-width: 100%;
+        }
+    }
+    .hero-style1 {
+        padding: 200px 0 40px 0;
+        text-align: center;
+        max-width: 100%;
+        .title1,
+        .title2 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-text {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-group {
+            justify-content: center;
+        }
+    }
+}
+
+@include sm {
+    .hero-title {
+        font-size: 50px;
+    }
+    .hero-1 {
+        overflow: hidden;
+    }
+}
+
+@include xs {
+    .hero-title {
+        font-size: 42px;
+        line-height: 1.24;
+        margin-bottom: 35px;
+    }
+    .hero-1 {
+        .hero-img {
+            margin: 0 12px 10px 12px;
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .hero-title {
+        font-size: 36px;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 330px) {
+    .hero-title {
+        font-size: 32px;
+    }
+}
+
+
+/* Hero 2 --------------------------------------*/
+.hero-2 {
+    overflow: hidden;
+    .hero-img {
+        position: absolute;
+        bottom: 0;
+        right: 7%;
+        @include xxl {
+            right: 1%;
+        }
+        @include xl {
+            max-width: 60%;
+        }
+    }
+}
+.hero-style2 {
+    position: relative;
+    z-index: 6;
+    padding: 240px 0;
+    .hero-title {
+        color: $white-color;
+    }
+    .sub-title {
+        margin-bottom: 33px;
+        color: $white-color;
+        .text:before {
+            background-color: $white-color;
+        }
+    }
+    .hero-text {
+        font-size: 18px;
+        max-width: 640px;
+        color: $white-color;
+    }
+    .watch-btn .text {
+        color: $white-color;
+    }
+}
+
+@include xl {
+    .hero-style2 {
+        padding: 190px 0;
+    }
+}
+@include lg {
+    .hero-style2 {
+        padding: 135px 0;
+    }
+}
+
+@include md {
+    .hero-style2 {
+        text-align: center;
+        padding: 100px 0 40px 0;
+        .hero-title {
+            .title1,
+            .title2 {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .hero-text {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .hero-2 {
+        .hero-img {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+    }
+    .hero-3 {
+        .hero-style2 {
+            padding: 100px 0 100px 0;
+        }
+    }
+}
+
+@include sm {
+    .hero-2 {
+        .hero-img {
+            max-width: calc(100% - 24px);
+            margin: 0 auto;
+        }
+    }
+}
