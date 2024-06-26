@@ -1,9 +1,7 @@
 .idea
-.idea/
-/.idea/
-.firebase/
 .firebase
 .github
 .firebaserc
 .env
-/.firebase/
+.vscode
+.gitlab
